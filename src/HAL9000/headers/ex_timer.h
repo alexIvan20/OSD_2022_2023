@@ -8,7 +8,8 @@ typedef enum _EX_TIMER_TYPE
     ExTimerTypeMax = ExTimerTypeRelativePeriodic
 } EX_TIMER_TYPE;
 
-typedef struct _EX_TIMER
+typedef struct 
+_EX_TIMER
 {
     // absolute time
     QWORD               TriggerTimeUs;

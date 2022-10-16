@@ -38,6 +38,7 @@ typedef struct _THREAD
     struct _THREAD          *Self;
 
     TID                     Id;
+    TID                     parentId;
     char*                   Name;
 
     // Currently the thread priority is not used for anything
@@ -91,6 +92,8 @@ typedef struct _THREAD
 
     struct _PROCESS*        Process;
 } THREAD, *PTHREAD;
+
+QWORD getNumberOfThreads();
 
 //******************************************************************************
 // Function:     ThreadSystemPreinit
