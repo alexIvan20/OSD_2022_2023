@@ -57,6 +57,8 @@ SystemPreinit(
     CorePreinit();
     NetworkStackPreinit();
     ProcessSystemPreinit();
+    LogSetLevel(LogLevelTrace);
+    LogSetTracedComponents(LogComponentThread);
 }
 
 STATUS

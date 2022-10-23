@@ -27,8 +27,10 @@ extern FUNC_ThreadSwitch            ThreadSwitch;
 
 typedef struct _THREAD_SYSTEM_DATA
 {
-    QWORD               NumberOfThreads;
     LOCK                AllThreadsLock;
+
+    _Guarded_by_(AllThreadsLock)
+    QWORD               NumberOfThreads;
 
     _Guarded_by_(AllThreadsLock)
     LIST_ENTRY          AllThreadsList;
@@ -246,6 +248,7 @@ ThreadSystemInitIdleForCurrentCPU(
         return status;
     }
     LOGPL("ThreadCreate for IDLE thread succeeded\n");
+    LogSetLevel(LogLevelInfo);
 
     ThreadCloseHandle(idleThread);
     idleThread = NULL;
@@ -697,6 +700,33 @@ ThreadExecuteForEachThreadEntry(
                                    FALSE
                                    );
     LockRelease(&m_threadSystemData.AllThreadsLock, oldState );
+
+    return status;
+}
+
+STATUS
+ThreadExecuteForEachReadyThreadEntry(
+    IN      PFUNC_ListFunction  Function,
+    IN_OPT  PVOID               Context
+)
+{
+    STATUS status;
+    INTR_STATE oldState;
+
+    if (NULL == Function)
+    {
+        return STATUS_INVALID_PARAMETER1;
+    }
+
+    status = STATUS_SUCCESS;
+
+    LockAcquire(&m_threadSystemData.ReadyThreadsLock, &oldState);
+    status = ForEachElementExecute(&m_threadSystemData.ReadyThreadsList,
+                                    Function,
+                                    Context,
+                                    FALSE
+                                    );
+    LockRelease(&m_threadSystemData.ReadyThreadsLock, oldState);
 
     return status;
 }

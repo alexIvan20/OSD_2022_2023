@@ -57,6 +57,7 @@ LogSystemInit(
     m_logData.Enabled = Enable;
     m_logData.LoggingComponents = LogComponenets;
     m_logData.LoggingLevel = LogLevel;
+    m_logData.LoggingLevel = LogLevelError;
 }
 
 void
