@@ -16,114 +16,114 @@ const PROCESS_TEST PROCESS_TESTS[] =
     { "TestUserArgsAll", "Args", "a b c d e f g h i j k l m n o p r s t u v q x y z"},
 
     // bad-actions
-    { "BadJumpKernel", "BadJumpKernel", NULL},
-    { "BadJumpNoncanonical", "BadJumpNoncanonical", NULL},
-    { "BadJumpNull", "BadJumpNull", NULL},
+    //{ "BadJumpKernel", "BadJumpKernel", NULL},
+    //{ "BadJumpNoncanonical", "BadJumpNoncanonical", NULL},
+    //{ "BadJumpNull", "BadJumpNull", NULL},
 
-    { "BadReadIoPort", "BadReadIoPort", NULL},
-    { "BadReadKernel", "BadReadKernel", NULL},
-    { "BadReadMsr", "BadReadMsr", NULL},
-    { "BadReadNonCanonical", "BadReadNonCanonical", NULL},
-    { "BadReadNull", "BadReadNull", NULL},
+    //{ "BadReadIoPort", "BadReadIoPort", NULL},
+    //{ "BadReadKernel", "BadReadKernel", NULL},
+    //{ "BadReadMsr", "BadReadMsr", NULL},
+    //{ "BadReadNonCanonical", "BadReadNonCanonical", NULL},
+    //{ "BadReadNull", "BadReadNull", NULL},
 
-    { "BadWriteIoPort", "BadWriteIoPort", NULL},
-    { "BadWriteKernel", "BadWriteKernel", NULL},
-    { "BadWriteMsr", "BadWriteMsr", NULL},
-    { "BadWriteNonCanonical", "BadWriteNonCanonical", NULL},
-    { "BadWriteNull", "BadWriteNull", NULL},
+    //{ "BadWriteIoPort", "BadWriteIoPort", NULL},
+    //{ "BadWriteKernel", "BadWriteKernel", NULL},
+    //{ "BadWriteMsr", "BadWriteMsr", NULL},
+    //{ "BadWriteNonCanonical", "BadWriteNonCanonical", NULL},
+    //{ "BadWriteNull", "BadWriteNull", NULL},
 
-    // file-syscalls
-    { "FileCloseBad", "FileCloseBad", NULL},
-    { "FileCloseNormal", "FileCloseNormal", NULL},
-    { "FileCloseStdout", "FileCloseStdout", NULL},
-    { "FileCloseTwice", "FileCloseTwice", NULL},
+    //// file-syscalls
+    //{ "FileCloseBad", "FileCloseBad", NULL},
+    //{ "FileCloseNormal", "FileCloseNormal", NULL},
+    //{ "FileCloseStdout", "FileCloseStdout", NULL},
+    //{ "FileCloseTwice", "FileCloseTwice", NULL},
 
-    { "FileCreateBadPointer", "FileCreateBadPointer", NULL},
-    { "FileCreateEmptyPath", "FileCreateEmptyPath", NULL},
-    { "FileCreateExistent", "FileCreateExistent", NULL},
-    { "FileCreateMissing", "FileCreateMissing", NULL},
-    { "FileCreateNormal", "FileCreateNormal", NULL},
-    { "FileCreateNull", "FileCreateNull", NULL},
-    { "FileCreateTwice", "FileCreateTwice", NULL},
+    //{ "FileCreateBadPointer", "FileCreateBadPointer", NULL},
+    //{ "FileCreateEmptyPath", "FileCreateEmptyPath", NULL},
+    //{ "FileCreateExistent", "FileCreateExistent", NULL},
+    //{ "FileCreateMissing", "FileCreateMissing", NULL},
+    //{ "FileCreateNormal", "FileCreateNormal", NULL},
+    //{ "FileCreateNull", "FileCreateNull", NULL},
+    //{ "FileCreateTwice", "FileCreateTwice", NULL},
 
-    { "FileReadBadHandle", "FileReadBadHandle", NULL},
-    { "FileReadBadPointer", "FileReadBadPointer", NULL},
-    { "FileReadKernel", "FileReadKernel", NULL},
-    { "FileReadNormal", "FileReadNormal", NULL},
-    { "FileReadStdout", "FileReadStdout", NULL},
-    { "FileReadZero", "FileReadZero", NULL},
+    //{ "FileReadBadHandle", "FileReadBadHandle", NULL},
+    //{ "FileReadBadPointer", "FileReadBadPointer", NULL},
+    //{ "FileReadKernel", "FileReadKernel", NULL},
+    //{ "FileReadNormal", "FileReadNormal", NULL},
+    //{ "FileReadStdout", "FileReadStdout", NULL},
+    //{ "FileReadZero", "FileReadZero", NULL},
 
-    // process-syscalls
-    { "ProcessCloseFile", "ProcessCloseFile", NULL},
-    { "ProcessCloseNormal", "ProcessCloseNormal", NULL},
-    { "ProcessCloseParentHandle", "ProcessCloseParentHandle", NULL},
-    { "ProcessCloseTwice", "ProcessCloseTwice", NULL},
+    //// process-syscalls
+    //{ "ProcessCloseFile", "ProcessCloseFile", NULL},
+    //{ "ProcessCloseNormal", "ProcessCloseNormal", NULL},
+    //{ "ProcessCloseParentHandle", "ProcessCloseParentHandle", NULL},
+    //{ "ProcessCloseTwice", "ProcessCloseTwice", NULL},
 
-    { "ProcessCreateBadPointer", "ProcessCreateBadPointer", NULL},
-    { "ProcessCreateMissingFile", "ProcessCreateMissingFile", NULL},
-    { "ProcessCreateMultiple", "ProcessCreateMultiple", NULL},
-    { "ProcessCreateOnce", "ProcessCreateOnce", NULL},
-    { "ProcessCreateWithArguments", "ProcessCreateWithArguments", NULL},
+    //{ "ProcessCreateBadPointer", "ProcessCreateBadPointer", NULL},
+    //{ "ProcessCreateMissingFile", "ProcessCreateMissingFile", NULL},
+    //{ "ProcessCreateMultiple", "ProcessCreateMultiple", NULL},
+    //{ "ProcessCreateOnce", "ProcessCreateOnce", NULL},
+    //{ "ProcessCreateWithArguments", "ProcessCreateWithArguments", NULL},
 
-    { "ProcessExit", "ProcessExit", NULL},
-    { "ProcessGetPid", "ProcessGetPid", NULL},
+    //{ "ProcessExit", "ProcessExit", NULL},
+    //{ "ProcessGetPid", "ProcessGetPid", NULL},
 
-    { "ProcessWaitBadHandle", "ProcessWaitBadHandle", NULL},
-    { "ProcessWaitClosedHandle", "ProcessWaitClosedHandle", NULL},
-    { "ProcessWaitNormal", "ProcessWaitNormal", NULL},
-    { "ProcessWaitTerminated", "ProcessWaitTerminated", NULL},
+    //{ "ProcessWaitBadHandle", "ProcessWaitBadHandle", NULL},
+    //{ "ProcessWaitClosedHandle", "ProcessWaitClosedHandle", NULL},
+    //{ "ProcessWaitNormal", "ProcessWaitNormal", NULL},
+    //{ "ProcessWaitTerminated", "ProcessWaitTerminated", NULL},
 
-    // thread-syscalls
-    { "ThreadCloseTwice", "ThreadCloseTwice", NULL},
+    //// thread-syscalls
+    //{ "ThreadCloseTwice", "ThreadCloseTwice", NULL},
 
-    { "ThreadCreateBadPointer", "ThreadCreateBadPointer", NULL},
-    { "ThreadCreateMultiple", "ThreadCreateMultiple", NULL},
-    { "ThreadCreateOnce", "ThreadCreateOnce", NULL},
-    { "ThreadCreateWithArguments", "ThreadCreateWithArguments", NULL},
+    //{ "ThreadCreateBadPointer", "ThreadCreateBadPointer", NULL},
+    //{ "ThreadCreateMultiple", "ThreadCreateMultiple", NULL},
+    //{ "ThreadCreateOnce", "ThreadCreateOnce", NULL},
+    //{ "ThreadCreateWithArguments", "ThreadCreateWithArguments", NULL},
 
-    { "ThreadExit", "ThreadExit", NULL},
-    { "ThreadGetTid", "ThreadGetTid", NULL},
+    //{ "ThreadExit", "ThreadExit", NULL},
+    //{ "ThreadGetTid", "ThreadGetTid", NULL},
 
-    { "ThreadWaitBadHandle", "ThreadWaitBadHandle", NULL},
-    { "ThreadWaitClosedHandle", "ThreadWaitClosedHandle", NULL},
-    { "ThreadWaitNormal", "ThreadWaitNormal", NULL},
-    { "ThreadWaitTerminated", "ThreadWaitTerminated", NULL},
+    //{ "ThreadWaitBadHandle", "ThreadWaitBadHandle", NULL},
+    //{ "ThreadWaitClosedHandle", "ThreadWaitClosedHandle", NULL},
+    //{ "ThreadWaitNormal", "ThreadWaitNormal", NULL},
+    //{ "ThreadWaitTerminated", "ThreadWaitTerminated", NULL},
 
-    // Project 3: Virtual Memory
+    //// Project 3: Virtual Memory
 
-    // process-quota
-    { "ProcessQuotaGood", "ProcessQuotaGood", NULL},
-    { "ProcessQuotaJustRight", "ProcessQuotaJustRight", NULL},
-    { "ProcessQuotaMore", "ProcessQuotaMore", NULL},
+    //// process-quota
+    //{ "ProcessQuotaGood", "ProcessQuotaGood", NULL},
+    //{ "ProcessQuotaJustRight", "ProcessQuotaJustRight", NULL},
+    //{ "ProcessQuotaMore", "ProcessQuotaMore", NULL},
 
-    // swap
-    { "SwapLinear", "SwapLinear", NULL},
-    { "SwapMultiple", "SwapLinear", NULL, 4},
-    { "SwapMultipleShared", "SwapMultipleShared", "0"},
-    { "SwapZeros", "SwapZeros", NULL},
-    { "SwapZerosWritten", "SwapZerosWritten", NULL},
+    //// swap
+    //{ "SwapLinear", "SwapLinear", NULL},
+    //{ "SwapMultiple", "SwapLinear", NULL, 4},
+    //{ "SwapMultipleShared", "SwapMultipleShared", "0"},
+    //{ "SwapZeros", "SwapZeros", NULL},
+    //{ "SwapZerosWritten", "SwapZerosWritten", NULL},
 
-    // syscalls
-    { "VirtualAllocAccessFail", "VirtualAllocAccessFail", NULL},
-    { "VirtualAllocHugeEager", "VirtualAllocHugeEager", NULL},
-    { "VirtualAllocHugeLazy", "VirtualAllocHugeLazy", NULL},
-    { "VirtualAllocNormal", "VirtualAllocNormal", NULL},
-    { "VirtualAllocWriteExec", "VirtualAllocWriteExec", NULL},
-    { "VirtualAllocZeros", "VirtualAllocZeros", NULL },
+    //// syscalls
+    //{ "VirtualAllocAccessFail", "VirtualAllocAccessFail", NULL},
+    //{ "VirtualAllocHugeEager", "VirtualAllocHugeEager", NULL},
+    //{ "VirtualAllocHugeLazy", "VirtualAllocHugeLazy", NULL},
+    //{ "VirtualAllocNormal", "VirtualAllocNormal", NULL},
+    //{ "VirtualAllocWriteExec", "VirtualAllocWriteExec", NULL},
+    //{ "VirtualAllocZeros", "VirtualAllocZeros", NULL },
 
-    //{ "VirtualFreeInvalid", "VirtualFreeInvalid", NULL },
-    //{ "VirtualFreeMore", "VirtualFreeMore", NULL },
+    ////{ "VirtualFreeInvalid", "VirtualFreeInvalid", NULL },
+    ////{ "VirtualFreeMore", "VirtualFreeMore", NULL },
 
-    { "VirtualSharedDifferentSize", "VirtualSharedNormal", "0 1 8 3" },
-    { "VirtualSharedHugeEager", "VirtualSharedNormal", "0 1 4096 4" },
-    { "VirtualSharedHugeLazy", "VirtualSharedNormal", "0 1 4096 5" },
-    { "VirtualSharedLessAccess", "VirtualSharedNormal", "0 1 8 1" },
-    { "VirtualSharedMoreAccess", "VirtualSharedNormal", "0 0 8 2" },
-    { "VirtualSharedNormal", "VirtualSharedNormal", "0 1 8 0" },
+    //{ "VirtualSharedDifferentSize", "VirtualSharedNormal", "0 1 8 3" },
+    //{ "VirtualSharedHugeEager", "VirtualSharedNormal", "0 1 4096 4" },
+    //{ "VirtualSharedHugeLazy", "VirtualSharedNormal", "0 1 4096 5" },
+    //{ "VirtualSharedLessAccess", "VirtualSharedNormal", "0 1 8 1" },
+    //{ "VirtualSharedMoreAccess", "VirtualSharedNormal", "0 0 8 2" },
+    //{ "VirtualSharedNormal", "VirtualSharedNormal", "0 1 8 0" },
 
-    // stack-growth
-    { "StackGrowthVariables", "StackGrowthVariables", NULL },
-    { "StackGrowthRecursiveFunction", "StackGrowthRecursiveFunction", NULL },
+    //// stack-growth
+    //{ "StackGrowthVariables", "StackGrowthVariables", NULL },
+    //{ "StackGrowthRecursiveFunction", "StackGrowthRecursiveFunction", NULL },
 };
 
 const DWORD PROCESS_TOTAL_NO_OF_TESTS = ARRAYSIZE(PROCESS_TESTS);

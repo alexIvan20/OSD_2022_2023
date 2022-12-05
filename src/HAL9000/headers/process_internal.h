@@ -11,6 +11,8 @@
 
 typedef struct _PROCESS
 {
+    LOCK                   UsedFramesLock;
+    DWORD                   UsedFramesCount;
     REF_COUNT                       RefCnt;
 
     // The PIDs will also be used for the CR3 PCID

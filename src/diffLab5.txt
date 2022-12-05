@@ -1,0 +1,59 @@
+diff --git a/src/HAL9000/src/system.c b/src/HAL9000/src/system.c
+index e79d8f3..4527983 100644
+--- a/src/HAL9000/src/system.c
++++ b/src/HAL9000/src/system.c
+@@ -21,6 +21,7 @@
+ #include "ex_system.h"
+ #include "process_internal.h"
+ #include "boot_module.h"
++#include "smp.h"
+ 
+ #define NO_OF_TSS_STACKS             7
+ STATIC_ASSERT(NO_OF_TSS_STACKS <= NO_OF_IST);
+@@ -61,6 +62,18 @@ SystemPreinit(
+     LogSetTracedComponents(LogComponentThread);
+ }
+ 
++static
++STATUS
++(__cdecl _HelloIpi)(
++    IN_OPT PVOID Context
++    )
++{
++    UNREFERENCED_PARAMETER(Context);
++
++    LOGP("Hello\n");
++    return STATUS_SUCCESS;
++}
++
+ STATUS
+ SystemInit(
+     IN  ASM_PARAMETERS*     Parameters
+@@ -72,6 +85,27 @@ SystemInit(
+     status = STATUS_SUCCESS;
+     pCpu = NULL;
+ 
++    PLIST_ENTRY pCpuListHead;
++    PLIST_ENTRY pCurEntry;
++
++    pCpuListHead = NULL;
++
++    SmpGetCpuList(&pCpuListHead);
++    pCurEntry = pCpuListHead->Flink;
++    while (pCurEntry != pCpuListHead->Blink) {
++        pCurEntry = pCurEntry->Flink;
++    }
++    PPCPU pCpu = CONTAINING_RECORD(pCurEntry, PCPU, ListEntry);
++
++    SMP_DESTINATION dest = {0};
++    dest.Cpu.ApicId = pCpu->ApicId;
++    status = SmpSendGenericIpiEx(_HelloIpi, NULL, NULL, NULL, FALSE, SmpIpiSendToAllIncludingSelf, dest);
++    if (!SUCCEEDED(status))
++    {
++        LOG_FUNC_ERROR("SmpSendGenericIpi", status);
++        return status;
++    }
++
+     LogSystemInit(LogLevelInfo,
+                   LogComponentInterrupt | LogComponentIo | LogComponentAcpi,
+                   TRUE
